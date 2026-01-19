@@ -11,7 +11,7 @@ def send_json(sock: socket.socket, obj: Dict[str, Any]) -> None:
 
 def recv_json(sock: socket.socket, max_bytes: int = 10_000_000) -> Dict[str, Any]:
     """
-    读取到换行符为止的一条JSON。服务端/客户端都用。
+    一次读取一条JSON（以换行符分隔）。
     """
     buf = bytearray()
     while True:
